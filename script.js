@@ -74,3 +74,18 @@ left.addEventListener('click',() =>{
     slideNum > 1 ? prevSlide() : getLastSlide();
     changeColor();
 });
+
+// Automatic
+let slide = 1;
+function automaticSlider(){
+    setTimeout(()=>{
+        automaticSlider();
+    },2000);
+    if (slide >= length) {
+        slide = 0;
+    }
+    slider.style.transform = `translateX(-${slide * 500}px)`;
+    slide++;
+};
+// automaticSlider();
+
